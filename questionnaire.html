@@ -1,34 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Valentine's Questionnaire</title>
-    <script defer src="script.js"></script>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <h1>Valentine's Questionnaire</h1>
-    <p>Answer these fun questions to see if you win a special prize!</p>
-    <form id="questionnaireForm">
-        <label for="name">What is your name?</label>
-        <input type="text" id="name" required>
-        
-        <label for="age">How old are you?</label>
-        <input type="number" id="age" required>
-        
-        <label for="chocolate">What is your favorite chocolate?</label>
-        <input type="text" id="chocolate" required>
-        
-        <label for="coffee">What is your favorite coffee?</label>
-        <input type="text" id="coffee" required>
-        
-        <label for="valentine">Who would you want to spend Valentine's Day with?</label>
-        <input type="text" id="valentine" required>
-        
-        <button type="button" id="submitQuestionnaire">Submit</button>
-    </form>
-    <p id="questionnaireResult"></p>
-    <a href="valentine.html" class="btn" id="claimPrize" style="display:none;">Claim Your Prize</a>
-</body>
-</html>
+<form id="questionnaireForm">
+    <label for="name">What is your name? 💕</label>
+    <input type="text" id="name" required>
+
+    <label for="age">How old are you? 🎂</label>
+    <input type="number" id="age" required min="1" max="120">
+
+    <label for="chocolate">Favorite Chocolate? 🍫</label>
+    <input type="text" id="chocolate" required>
+
+    <label for="coffee">Favorite Coffee? ☕</label>
+    <input type="text" id="coffee" required>
+
+    <label for="valentine">Who do you want to spend Valentine's Day with? 💖</label>
+    <input type="text" id="valentine" required>
+
+    <button type="button" id="submitQuestionnaire">Submit</button>
+    <button type="reset" class="btn-secondary">Reset</button>
+</form>

@@ -3,16 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Valentine's Questionnaire</title>
+    <title>Will You Be My Valentine?</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Congratulations! You've won a special Valentine's prize!</h1>
-    <p>Before you receive your surprise, answer these questions:</p>
-    <form>
-        <label>Will you be my Valentine? ❤️</label>
-        <button type="button" onclick="location.href='yes.html'">Yes</button>
-        <button type="button" onclick="location.href='no.html'">No</button>
-    </form>
+    <header>
+        <h1>🎉 Congratulations! You've won a special Valentine's prize! 💝</h1>
+        <p>But first, one last question... 😊</p>
+    </header>
+
+    <main>
+        <form>
+            <label>💌 Will you be my Valentine? ❤️</label>
+            <button type="button" onclick="if (confirm('Are you sure?')) location.href='yes.html'">Yes! 💕</button>
+            <button type="button" onclick="if (confirm('Are you sure?')) location.href='no.html'">No 😢</button>
+        </form>
+    </main>
+
+    <noscript>
+        <p>This website requires JavaScript to function properly. Please enable JavaScript in your browser.</p>
+    </noscript>
 </body>
 </html>

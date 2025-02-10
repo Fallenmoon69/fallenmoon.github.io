@@ -1,21 +1,27 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // Music play button
+    // Music Button
     const playMusicButton = document.getElementById("playMusic");
-    const backgroundMusic = document.getElementById("backgroundMusic");
+    const youtubeAudio = document.getElementById("youtubeAudio");
 
-    if (playMusicButton && backgroundMusic) {
+    if (playMusicButton && youtubeAudio) {
+        let isPlaying = false;
+
         playMusicButton.addEventListener("click", function() {
-            if (backgroundMusic.paused) {
-                backgroundMusic.play();
-                playMusicButton.textContent = "Pause Music";
+            if (!isPlaying) {
+                // Unmute and play the video
+                youtubeAudio.src += "&mute=0";
+                isPlaying = true;
+                playMusicButton.textContent = "Pause Music ⏸️";
             } else {
-                backgroundMusic.pause();
-                playMusicButton.textContent = "Play Music";
+                // Pause the video
+                youtubeAudio.src = youtubeAudio.src.replace("&mute=0", "&mute=1");
+                isPlaying = false;
+                playMusicButton.textContent = "Play Music 🎶";
             }
         });
     }
 
-    // Questionnaire submission
+    // Questionnaire Submission
     const submitQuestionnaire = document.getElementById("submitQuestionnaire");
     if (submitQuestionnaire) {
         submitQuestionnaire.addEventListener("click", function() {
@@ -27,6 +33,11 @@ document.addEventListener("DOMContentLoaded", function() {
             
             if (!name || !age || !chocolate || !coffee || !valentine) {
                 alert("Please fill in all fields before submitting!");
+                return;
+            }
+
+            if (isNaN(age) || age <= 0) {
+                alert("Please enter a valid age!");
                 return;
             }
 

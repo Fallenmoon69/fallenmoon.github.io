@@ -24,8 +24,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Questionnaire Submission
     const submitQuestionnaire = document.getElementById("submitQuestionnaire");
     if (submitQuestionnaire) {
-        // Ensure the event listener is only attached once
-        submitQuestionnaire.addEventListener("click", function handleSubmit() {
+        submitQuestionnaire.addEventListener("click", function() {
             const name = document.getElementById("name").value.trim();
             const age = document.getElementById("age").value.trim();
             const chocolate = document.getElementById("chocolate").value.trim();
@@ -42,11 +41,34 @@ document.addEventListener("DOMContentLoaded", function() {
                 return;
             }
 
+            // Save results to localStorage
+            localStorage.setItem("questionnaireResult", JSON.stringify({
+                name,
+                age,
+                chocolate,
+                coffee,
+                valentine
+            }));
+
+            // Display result
             document.getElementById("questionnaireResult").textContent = `Congratulations, ${name}! 🎉 You won a Valentine's surprise!`;
             document.getElementById("claimPrize").style.display = "inline-block";
 
-            // Remove the event listener after submission to prevent multiple submissions
-            submitQuestionnaire.removeEventListener("click", handleSubmit);
+            // Disable the submit button to prevent multiple submissions
+            submitQuestionnaire.disabled = true;
         });
+    }
+
+    // Pre-fill form if returning from valentine.html
+    const savedResult = localStorage.getItem("questionnaireResult");
+    if (savedResult) {
+        const result = JSON.parse(savedResult);
+        document.getElementById("name").value = result.name;
+        document.getElementById("age").value = result.age;
+        document.getElementById("chocolate").value = result.chocolate;
+        document.getElementById("coffee").value = result.coffee;
+        document.getElementById("valentine").value = result.valentine;
+        document.getElementById("questionnaireResult").textContent = `Welcome back, ${result.name}! 🎉`;
+        document.getElementById("claimPrize").style.display = "inline-block";
     }
 });

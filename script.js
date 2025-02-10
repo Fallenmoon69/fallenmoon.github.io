@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // Music Button
+    // Music Button (if applicable)
     const playMusicButton = document.getElementById("playMusic");
     const youtubeAudio = document.getElementById("youtubeAudio");
 
@@ -24,7 +24,8 @@ document.addEventListener("DOMContentLoaded", function() {
     // Questionnaire Submission
     const submitQuestionnaire = document.getElementById("submitQuestionnaire");
     if (submitQuestionnaire) {
-        submitQuestionnaire.addEventListener("click", function() {
+        // Ensure the event listener is only attached once
+        submitQuestionnaire.addEventListener("click", function handleSubmit() {
             const name = document.getElementById("name").value.trim();
             const age = document.getElementById("age").value.trim();
             const chocolate = document.getElementById("chocolate").value.trim();
@@ -43,6 +44,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
             document.getElementById("questionnaireResult").textContent = `Congratulations, ${name}! 🎉 You won a Valentine's surprise!`;
             document.getElementById("claimPrize").style.display = "inline-block";
+
+            // Remove the event listener after submission to prevent multiple submissions
+            submitQuestionnaire.removeEventListener("click", handleSubmit);
         });
     }
 });

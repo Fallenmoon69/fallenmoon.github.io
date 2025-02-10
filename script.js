@@ -7,7 +7,7 @@ document.getElementById("playMusic").addEventListener("click", function() {
     }
 });
 
-document.getElementById("spinButton")?.addEventListener("click", function() {
-    document.getElementById("result").textContent = "Congratulations! You won a Valentine's surprise!";
+document.getElementById("submitQuestionnaire")?.addEventListener("click", function() {
+    document.getElementById("questionnaireResult").textContent = "Congratulations! You won a Valentine's surprise!";
     document.getElementById("claimPrize").style.display = "block";
 });

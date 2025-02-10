@@ -1,18 +1,35 @@
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    background-image: url("https://images.unsplash.com/photo-1534040385115-33dcb3acba5b?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
     margin: 0;
-    padding: 20px;
+    padding: 0;
 }
 
-header, main {
-    max-width: 600px;
-    margin: 0 auto;
+/* Background Image for Landing Page */
+body.index-page {
+    background-image: url('https://images.unsplash.com/photo-1534040385115-33dcb3acba5b?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover; /* Ensures the image covers the entire page */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-attachment: fixed; /* Keeps the image fixed while scrolling */
+    height: 100vh; /* Ensures the background covers the full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white; /* Adjust text color for better visibility */
+}
+
+/* Header and Button Styles */
+header {
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for better readability */
+    padding: 20px;
+    border-radius: 10px;
 }
 
 h1, h2 {
-    color: #b56576;
+    color: white; /* White text for better contrast */
 }
 
 .btn {
@@ -30,28 +47,4 @@ h1, h2 {
 .btn:hover {
     background-color: #ff1493;
     transition: background-color 0.3s ease;
-}
-
-.btn-secondary {
-    background-color: #ccc;
-    color: #333;
-}
-
-.btn-secondary:hover {
-    background-color: #bbb;
-}
-
-input[type="text"], input[type="number"] {
-    padding: 8px;
-    margin: 5px 0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    width: 80%;
-    max-width: 300px;
-}
-
-#questionnaireResult {
-    margin-top: 20px;
-    font-size: 1.2em;
-    color: #b56576;
 }

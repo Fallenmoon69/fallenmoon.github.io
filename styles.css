@@ -2,6 +2,13 @@ body {
     font-family: Arial, sans-serif;
     text-align: center;
     background-color: #fff0f5;
+    margin: 0;
+    padding: 20px;
+}
+
+header, main {
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 h1, h2 {
@@ -14,4 +21,37 @@ h1, h2 {
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
+    display: inline-block;
+    margin-top: 10px;
+    cursor: pointer;
+    border: none;
+}
+
+.btn:hover {
+    background-color: #ff1493;
+    transition: background-color 0.3s ease;
+}
+
+.btn-secondary {
+    background-color: #ccc;
+    color: #333;
+}
+
+.btn-secondary:hover {
+    background-color: #bbb;
+}
+
+input[type="text"], input[type="number"] {
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 80%;
+    max-width: 300px;
+}
+
+#questionnaireResult {
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: #b56576;
 }

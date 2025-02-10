@@ -3,21 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Will You Be My Valentine?</title>
+    <title>Valentine's Questionnaire</title>
     <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
     <header>
-        <h1>🎉 Congratulations! You've won a special Valentine's prize! 💝</h1>
-        <p>But first, one last question... 😊</p>
+        <h1>💌 Valentine's Questionnaire 💌</h1>
+        <p>Answer these fun questions and see if you win a special prize! 🎁</p>
     </header>
 
     <main>
-        <form>
-            <label>💌 Will you be my Valentine? ❤️</label>
-            <button type="button" onclick="if (confirm('Are you sure?')) location.href='yes.html'">Yes! 💕</button>
-            <button type="button" onclick="if (confirm('Are you sure?')) location.href='no.html'">No 😢</button>
+        <form id="questionnaireForm">
+            <label for="name">What is your name? 💕</label>
+            <input type="text" id="name" required>
+
+            <label for="age">How old are you? 🎂</label>
+            <input type="number" id="age" required min="1" max="120">
+
+            <label for="chocolate">Favorite Chocolate? 🍫</label>
+            <input type="text" id="chocolate" required>
+
+            <label for="coffee">Favorite Coffee? ☕</label>
+            <input type="text" id="coffee" required>
+
+            <label for="valentine">Who do you want to spend Valentine's Day with? 💖</label>
+            <input type="text" id="valentine" required>
+
+            <button type="button" id="submitQuestionnaire">Submit</button>
+            <button type="reset" class="btn-secondary">Reset</button>
         </form>
+
+        <p id="questionnaireResult"></p>
+        <a href="valentine.html" class="btn" id="claimPrize" style="display:none;">Claim Your Prize 🎁</a>
     </main>
 
     <noscript>

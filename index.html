@@ -1,9 +1,26 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cozy Coffee Shop</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
 <body>
-  <h1>FALLENMOON</h1>
-  <p>Welcome to my website!</p>
-  <img src="https://content.codecademy.com/articles/github-pages-via-web-app/happy-ice-cream.gif" />
+    <header>
+        <h1>Welcome to Cozy Coffee</h1>
+        <button id="playMusic">Play Music</button>
+    </header>
+    
+    <section class="intro">
+        <h2>Valentine's Special</h2>
+        <p>Enter our Valentine's Giveaway and win a special surprise!</p>
+        <a href="game.html" class="btn">Enter Now</a>
+    </section>
+    
+    <audio id="backgroundMusic" loop>
+        <source src="media/music.mp3" type="audio/mp3">
+    </audio>
 </body>
-
 </html>
